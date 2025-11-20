@@ -31,7 +31,6 @@ contract Faucet {
         emit TokensRequested(amount, "User has requested tokens");
     }
 
-// 0xa97e8DcA4c2e798696a8023DD0e8aAc01F327802
     function depositTokens() public payable {
         require(msg.value > 0, "Must deposit some ETH");
         emit UserDeposited(msg.value, "Deposited into faucet");
@@ -65,7 +64,5 @@ contract Faucet {
     modifier onlyOwner() {
     require(msg.sender == owner, "Not the contract owner");
     _;
-}
-
-
+    }
 }
